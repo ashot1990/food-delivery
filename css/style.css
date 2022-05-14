@@ -1,0 +1,642 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+.container {
+  width: 100%;
+  overflow: unset; }
+
+header {
+  border-bottom: 2px solid #EDEEF2;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000; }
+
+.section {
+  max-width: 192rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0 10rem; }
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  position: relative;
+  top: 13rem;
+  grid-row-gap: 3rem; }
+
+.btn {
+  padding: 1.2rem 1.4rem;
+  background-color: unset;
+  border: 2px solid #83859C;
+  border-radius: .8rem;
+  position: relative;
+  top: 0.5rem;
+  color: #83859C;
+  text-align: center; }
+
+textarea:focus, input:focus {
+  outline: none; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 8rem);
+  width: 100%; }
+  .navigation-left {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-column: 1/6;
+    align-items: center;
+    transition: all .2s linear;
+    -moz-transition: all .2s linear; }
+  .navigation-logo {
+    grid-column: 1/4; }
+    .navigation-logo h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      position: relative;
+      top: 0.6rem; }
+    .navigation-logo p {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #4E60FF; }
+  .navigation-search {
+    grid-column: 5/13;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EDEEF2;
+    height: 4rem;
+    border-radius: 1.2rem;
+    padding: 0 1rem;
+    transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    width: 18rem; }
+    .navigation-search:hover {
+      width: 22rem; }
+    .navigation-search label {
+      width: 100%; }
+    .navigation-search input {
+      border: unset;
+      background-color: #EDEEF2;
+      height: 3rem;
+      width: 100%; }
+
+.menu {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  grid-column: 6/13;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  grid-template-rows: 8rem; }
+  .menu__button {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    visibility: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.6rem;
+    background-color: #F3F4FF;
+    margin-right: 1rem; }
+    .menu__button--icon {
+      position: relative; }
+      .menu__button--icon, .menu__button--icon::before, .menu__button--icon::after {
+        width: 3rem;
+        height: 2px;
+        background-color: #83859c;
+        display: inline-block; }
+      .menu__button--icon::before, .menu__button--icon::after {
+        content: "";
+        position: absolute;
+        left: 0; }
+      .menu__button--icon::before {
+        top: -1rem; }
+      .menu__button--icon::after {
+        top: 1rem; }
+  .menu-block {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    justify-content: center; }
+    .menu-block-list {
+      list-style-type: none;
+      cursor: pointer;
+      border-radius: .8rem;
+      transition: all .3s;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 4rem; }
+      .menu-block-list-bg--color:hover {
+        background-color: #697BFF; }
+      .menu-block-list:hover .menu-block-item {
+        color: white; }
+      .menu-block-list label {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 3;
+        cursor: pointer;
+        border-radius: .8rem;
+        padding: 0 1rem; }
+    .menu-block-item {
+      text-decoration: none;
+      font-family: 'Nunito',sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.1px;
+      color: #2B2B43;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin: 0 10px; }
+  .menu-block2 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-content: center; }
+    .menu-block2-list {
+      list-style-type: none;
+      cursor: pointer;
+      line-height: 3;
+      border-radius: .8rem;
+      transition: all .3s; }
+  .menu-elements {
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: #F3F4FF;
+    border-radius: 1.6rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .menu-elements-margin {
+      margin-right: 1rem; }
+    .menu-elements-small::after {
+      content: "4";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: calc(85% - 16px / 2);
+      top: calc(0% - 16px / 2);
+      color: white;
+      background-color: #4E60FF;
+      border-radius: .8rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 14px; }
+  .menu-profile {
+    background: url("../img/profile.png");
+    background-size: cover;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 1.6rem;
+    border: 2.5px solid white; }
+
+.deals {
+  display: grid;
+  grid-column: 1/13;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 21rem);
+  gap: 2rem; }
+  .deals-block {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    border-radius: 1.6rem; }
+    .deals-block:nth-child(1) {
+      grid-column: 1/7;
+      background-color: #F3F4FF;
+      transition: all .2s linear; }
+      .deals-block:nth-child(1):hover {
+        background-color: #cfecee; }
+    .deals-block:nth-child(2) {
+      grid-column: 7/13;
+      background-color: #FFF3ED;
+      transition: all .2s linear; }
+      .deals-block:nth-child(2):hover {
+        background-color: rgba(147, 238, 192, 0.93); }
+    .deals-block-picture {
+      grid-column: 1/8;
+      grid-row: 1/13;
+      width: 100%;
+      display: grid;
+      align-items: end; }
+    .deals-block-img1 {
+      background-image: url("../img/deals1.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 30rem;
+      height: 21rem;
+      margin: 0 auto; }
+    .deals-block-img2 {
+      background-image: url("../img/deals2.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 30rem;
+      height: 21rem;
+      margin: 0 auto; }
+    .deals-block--content {
+      display: grid;
+      grid-column: 8/13;
+      align-items: center;
+      grid-row: 1/13;
+      margin-left: 1rem;
+      width: 19rem; }
+      .deals-block--content p {
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        color: #2B2B43;
+        font-size: 2rem;
+        letter-spacing: 0.1px;
+        line-height: 2.8rem; }
+      .deals-block--content h2 {
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 56px;
+        letter-spacing: 0.1px;
+        position: relative;
+        bottom: 2.5rem; }
+      .deals-block--content-color1 {
+        color: #4E60FF; }
+      .deals-block--content-color2 {
+        color: #FD6D22; }
+      .deals-block--content span {
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+        color: #83859C; }
+
+.categories {
+  grid-column: 1 / 13;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 9rem;
+  gap: 2%; }
+  .categories-item {
+    border: 1px solid #EDEEF2;
+    border-radius: 1.6rem;
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s; }
+    .categories-item:hover {
+      background-color: #F3F4FF;
+      border: 1px solid #697BFF;
+      cursor: pointer; }
+    .categories-item img {
+      transition: all .2s linear; }
+    .categories-item:hover img {
+      rotate: 45deg; }
+  .categories span {
+    font-family: 'Nunito',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #545563;
+    position: relative;
+    bottom: .3rem; }
+
+.restaurants {
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2%; }
+  .restaurants h2 {
+    font-family: 'Nunito',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    color: #2B2B43;
+    display: grid;
+    align-items: center;
+    grid-column: 1/13;
+    margin: 1rem 0; }
+  .restaurants-card {
+    display: grid;
+    grid-template-columns: 100%; }
+    .restaurants-card-1 {
+      grid-column: 1/5; }
+    .restaurants-card-2 {
+      grid-column: 5/9; }
+    .restaurants-card-3 {
+      grid-column: 9/13; }
+    .restaurants-card-bg {
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 1.6rem 1.6rem 0 0;
+      height: 21rem;
+      position: relative; }
+      .restaurants-card-bg span {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        width: 10rem;
+        height: 3.2rem;
+        border-radius: 0 1.6rem 0 1.6rem;
+        background-color: #4E60FF;
+        color: white; }
+    .restaurants-card-title {
+      border: 1px solid #EDEEF2;
+      border-radius: 0 0 1.6rem 1.6rem;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, 3rem);
+      padding: 1.3rem;
+      gap: 1rem;
+      height: 14rem;
+      margin-bottom: 3rem; }
+      .restaurants-card-title img {
+        margin-right: .5rem; }
+      .restaurants-card-title h3 {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #2B2B43;
+        position: relative; }
+        .restaurants-card-title h3 span {
+          background: url("../img/shopping_bag-grey.png") 0 0 no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: 0;
+          top: .5rem;
+          width: 2rem;
+          height: 2rem; }
+          .restaurants-card-title h3 span:hover {
+            background: url("../img/shopping_bag.png") 0 0 no-repeat;
+            background-size: cover;
+            cursor: pointer; }
+      .restaurants-card-title span, .restaurants-card-title p {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: #83859C; }
+      .restaurants-card-title-dot {
+        width: .5rem;
+        height: .5rem;
+        background: #4E60FF;
+        margin: 0 1rem;
+        border-radius: 50%; }
+      .restaurants-card-title--icon::after {
+        content: "4";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        color: white;
+        background-color: #4E60FF;
+        border-radius: 0.5rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 14px; }
+    .restaurants-card-bottom-bg {
+      background-size: cover;
+      border-radius: 1.6rem 1.6rem 0 0;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 8rem; }
+    .restaurants-card-bottom-bg1 {
+      background-image: url("../img/bottom1.png"); }
+    .restaurants-card-bottom-bg2 {
+      background-image: url("../img/bottom2.png"); }
+    .restaurants-card-bottom-bg3 {
+      background-image: url("../img/bottom3.png"); }
+    .restaurants-card-logo {
+      display: grid;
+      grid-template-columns: repeat(13, 10rem);
+      gap: 1rem; }
+      .restaurants-card-logo-details {
+        display: grid;
+        grid-auto-flow: column;
+        border-radius: 1.6rem;
+        background-color: #EDEEF2;
+        align-items: center;
+        justify-content: space-evenly; }
+  .restaurants-card-bg1 {
+    background-image: url("../img/royal_sushi.png"); }
+  .restaurants-card-bg2 {
+    background-image: url("../img/burgers.png"); }
+  .restaurants-card-bg3 {
+    background-image: url("../img/ninja_sushi.png"); }
+
+.menu__checkbox {
+  display: none; }
+
+.menu__checkbox:checked ~ .menu-block-part1 {
+  display: grid; }
+
+.navigation__checkbox {
+  display: none; }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
+  background-color: white; }
+
+.navigation__checkbox:checked .section-grid {
+  display: none; }
+
+@media only screen and (max-width: 56.25em) {
+  .section {
+    padding: 0 5rem;
+    max-width: 100%; } }
+
+@media only screen and (max-width: 37.5em) {
+  .section {
+    padding: 0 1.5rem;
+    max-width: 100%; } }
+
+@media only screen and (max-width: 56.25em) {
+  .menu {
+    grid-column: 6/13;
+    position: relative; }
+    .menu .menu__checkbox:checked ~ .menu-block {
+      display: grid; }
+    .menu-block {
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1fr;
+      display: none;
+      position: absolute;
+      top: 8.2rem;
+      right: 7rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  .menu__button {
+    visibility: visible;
+    display: flex; } }
+
+@media only screen and (max-width: 37.5em) {
+  .menu-block {
+    display: none;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 100%;
+    position: absolute;
+    right: 0;
+    top: 8rem; }
+    .menu-block-list {
+      background-color: #edeef2;
+      margin-bottom: .2rem; } }
+
+@media only screen and (max-width: 76.25em) {
+  .deals {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 30rem));
+    width: 100%; }
+    .deals-block {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-rows: repeat(12, minmax(0, 1fr)); }
+      .deals-block:nth-child(1) {
+        grid-column: 1/13; }
+      .deals-block:nth-child(2) {
+        grid-column: 1/13; }
+      .deals-block-img1 {
+        width: 34rem;
+        height: 22rem;
+        margin: 0 auto; }
+      .deals-block-img2 {
+        width: 34rem;
+        height: 22rem;
+        margin: 0 auto; }
+      .deals-block--content {
+        margin: 0; }
+        .deals-block--content p {
+          font-size: 1.6rem; }
+        .deals-block--content h2 {
+          font-size: 4rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  .deals {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 42rem));
+    width: 100%; }
+    .deals-block-picture {
+      grid-column: 1/13;
+      grid-row: 6/13; }
+    .deals-block-img1 {
+      width: 35rem;
+      margin: 0 auto; }
+    .deals-block-img2 {
+      width: 35rem;
+      margin: 0 auto; }
+    .deals-block--content {
+      grid-row: 2/6;
+      grid-column: 1/13;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      width: 100%;
+      padding: 1.8rem; }
+      .deals-block--content p {
+        grid-row: 1/2; }
+      .deals-block--content h2 {
+        grid-row: 2/3;
+        bottom: 0; }
+      .deals-block--content span {
+        grid-row: 1/2;
+        text-align: end; } }
+
+@media only screen and (max-width: 56.25em) {
+  .navigation-search {
+    display: none; } }
+
+@media only screen and (max-width: 37.5em) {
+  .categories {
+    grid-template-rows: repeat(2, minmax(0, 10rem));
+    grid-template-columns: repeat(12, minmax(0, 10rem));
+    margin-top: 2rem; }
+    .categories-item:nth-child(1) {
+      grid-row: 1/2;
+      grid-column: 1/5; }
+    .categories-item:nth-child(2) {
+      grid-row: 1/2;
+      grid-column: 5/9; }
+    .categories-item:nth-child(3) {
+      grid-row: 1/2;
+      grid-column: 9/13; }
+    .categories-item:nth-child(4) {
+      grid-row: 2/3;
+      grid-column: 1/5; }
+    .categories-item:nth-child(5) {
+      grid-row: 2/3;
+      grid-column: 5/9; }
+    .categories-item:nth-child(6) {
+      grid-row: 2/3;
+      grid-column: 9/13; } }
+
+@media only screen and (max-width: 56.25em) {
+  .restaurants {
+    grid-template-rows: 3rem repeat(3, 1fr);
+    gap: 3%; } }
+
+@media only screen and (max-width: 56.25em) {
+  .restaurants-card {
+    grid-column: 1/13; }
+    .restaurants-card .restaurants-card-bottom-bg1 {
+      display: none; }
+    .restaurants-card .restaurants-card-bottom-bg {
+      display: none; } }

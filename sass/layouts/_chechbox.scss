@@ -1,0 +1,22 @@
+.menu {
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked ~ .menu-block-part1 {
+  display: grid;
+
+  }
+}
+
+.navigation__checkbox {
+  display: none;
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
+  background-color: white;
+}
+.navigation__checkbox:checked .section-grid{
+  display: none;
+}

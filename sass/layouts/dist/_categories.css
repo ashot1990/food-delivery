@@ -1,0 +1,31 @@
+.categories {
+  grid-column: 1/13;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 15%);
+  grid-template-rows: 7rem;
+  gap: 2%;
+}
+.categories-item {
+  border: 1px solid #EDEEF2;
+  border-radius: 1.6rem;
+  background-color: #fff;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.categories-item:hover {
+  background-color: #F3F4FF;
+  border: 1px solid #697BFF;
+  cursor: pointer;
+}
+.categories span {
+  position: relative;
+  bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #545563;
+}

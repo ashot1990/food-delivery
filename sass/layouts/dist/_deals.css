@@ -1,0 +1,46 @@
+.deals {
+  display: grid;
+  grid-column: 1/13;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
+  gap: 2rem;
+}
+.deals-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  border-radius: 1.6rem;
+}
+.deals-block-img {
+  display: flex;
+}
+.deals-block-bgcolor1 {
+  background-color: #F3F4FF;
+}
+.deals-block-bgcolor2 {
+  background-color: #FFF3ED;
+}
+.deals-block p {
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.1px;
+  line-height: 2.8rem;
+  margin: 1rem 0;
+}
+.deals-block h2 {
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 5.6rem;
+  letter-spacing: 0.1px;
+  color: #4E60FF;
+  margin: 1rem 0;
+}
+.deals-block span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #83859C;
+  position: relative;
+  top: 3rem;
+}

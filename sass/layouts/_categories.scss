@@ -1,0 +1,41 @@
+.categories {
+  grid-column: 1 / 13;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 9rem;
+  gap: 2%;
+
+  &-item {
+    border: 1px solid #EDEEF2;
+    border-radius: 1.6rem;
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    &:hover {
+      background-color: #F3F4FF;
+      border: 1px solid #697BFF;
+      cursor: pointer;
+    }
+    img{
+      transition: all .2s linear;
+    }
+    &:hover img{
+     rotate: (45deg);
+    }
+  }
+
+  & span {
+    font-family: 'Nunito',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #545563;
+    position: relative;
+    bottom: .3rem;
+    }
+}

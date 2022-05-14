@@ -1,0 +1,208 @@
+
+.restaurants { // RESTAURANT SECTION
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  //grid-template-rows: 4rem repeat(3,1fr);
+  gap: 2%;
+
+
+
+  & h2 {
+    font-family: 'Nunito',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    color: #2B2B43;
+    display: grid;
+    align-items: center;
+    grid-column: 1/13;
+    margin: 1rem 0;
+  }
+
+
+  &-card { // RESTAURANT CARD SECTION
+    display: grid;
+    grid-template-columns: 100%;
+    //grid-template-rows: repeat(3, minmax(0,47.3rem));
+
+    &-1 {
+      grid-column: 1/5;
+    }
+    &-2 {
+      grid-column: 5/9;
+    }
+    &-3 {
+      grid-column: 9/13;
+    }
+    &-bg { // RESTAURANT CARD TOP SECTION BACKGROUND
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 1.6rem 1.6rem 0 0;
+      height: 21rem;
+      position: relative;
+
+      & span {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        right: 0;
+
+        width: 10rem;
+        height: 3.2rem;
+        border-radius: 0 1.6rem 0 1.6rem;
+        background-color: #4E60FF;
+        color: white;
+
+
+
+
+      }
+    }
+
+
+    &-title { // RESTAURANTS CARD TITLE SECTION MIDDLE
+      border: 1px solid #EDEEF2;
+      border-radius: 0 0 1.6rem 1.6rem;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, 3rem);
+      padding: 1.3rem;
+      gap: 1rem;
+      height: 14rem;
+      margin-bottom: 3rem;
+
+      & img {
+        margin-right: .5rem;
+      }
+      & h3 {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #2B2B43;
+        position: relative;
+        & span {
+          background: url("../img/shopping_bag-grey.png") 0 0 no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: 0;
+          top:.5rem;
+          width: 2rem;
+          height: 2rem;
+
+          &:hover {
+            background: url("../img/shopping_bag.png") 0 0 no-repeat;
+            background-size: cover;
+            cursor: pointer;
+          }
+        }
+      }
+
+      & span, p {
+        font-family: 'Nunito',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: #83859C;
+      }
+      &-dot{
+        width: .5rem;
+        height: .5rem;
+        background: #4E60FF;
+        margin: 0 1rem;
+        border-radius: 50%;
+
+
+      }
+      &--icon::after {
+        content: "4";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        color: white;
+        background-color: #4E60FF;
+        border-radius: 0.5rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 14px;
+      }
+    }
+
+    &-bottom-bg { //  RESTAURANTS CARD BOTTOM-bg SECTION
+      background-size: cover;
+      border-radius: 1.6rem 1.6rem 0 0;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 8rem;
+    }
+
+    &-bottom-bg1 {
+      background-image: url("../img/bottom1.png");
+    }
+
+    &-bottom-bg2 {
+      background-image: url("../img/bottom2.png");
+    }
+
+    &-bottom-bg3 {
+      background-image: url("../img/bottom3.png");
+
+    }
+
+    &-logo { //RESTAURANT CARD LOGO
+      display: grid;
+      grid-template-columns: repeat(13, 10rem);
+      gap: 1rem;
+
+
+      &-details { //RESTAURANT CARD LOGO DETAILS
+        display: grid;
+        grid-auto-flow: column;
+        border-radius: 1.6rem;
+        background-color: #EDEEF2;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    }
+  }
+
+
+  &-card-bg1 {
+    background-image: url("../img/royal_sushi.png");
+
+  }
+
+  &-card-bg2 {
+    background-image: url("../img/burgers.png");
+
+  }
+
+  &-card-bg3 {
+    background-image: url("../img/ninja_sushi.png");
+
+  }
+}
